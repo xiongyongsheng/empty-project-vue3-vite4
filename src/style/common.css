@@ -1,0 +1,56 @@
+:root {
+  /* todo color */
+  --theme-color-gray: #6c6c6c;
+  --theme-color-red: #cf3333;
+  --theme-color-primary: #c71919;
+  --theme-color-black: #31404c;
+  /* todo font-size */
+  --font-size-1: 12px;
+  --font-size-2: calc(var(--font-size-1) * 1.1);
+  --font-size-3: calc(var(--font-size-1) * 1.2);
+  --font-size-4: calc(var(--font-size-1) * 1.3);
+  --font-size-5: calc(var(--font-size-1) * 1.4);
+  --font-size-6: calc(var(--font-size-1) * 1.5);
+  --theme-bg-color: #f8f8f8;
+  --theme-card-bg-color: #ffffff;
+  --theme-link-color: #4498f6;
+  --border-radius: 10px;
+  --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+body {
+  background-color: var(--theme-bg-color);
+  min-height: 100vh;
+  margin: 0;
+}
+
+*[skeleton-switch='true'] *[skeleton=''],
+*[skeleton='true'] {
+  --filter: contrast(0%) brightness(1.85);
+  background-color: #fff;
+  filter: var(--filter);
+  animation: skeleton-animation infinite ease-in-out 1.2s;
+}
+*[skeleton-switch='true'] {
+  position: relative;
+}
+*[skeleton-switch='true']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+}
+@keyframes skeleton-animation {
+  0% {
+    filter: var(--filter);
+  }
+  50% {
+    filter: contrast(0%) brightness(1.7);
+  }
+  100% {
+    filter: var(--filter);
+  }
+}
