@@ -8,7 +8,7 @@ class HttpRequest {
     // 主请求拦截器
     this.instance.interceptors.request.use(
       (config) => {
-        // 发送请求前执行自定义回调方法: 可取消请求
+        // 返回的 config.abortController.abort() 可以主动取消请求;
         config._callBack && config._callBack(config);
         return config;
       },
