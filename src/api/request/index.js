@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import '../mock';
+// import '../mock';
 
 class HttpRequest {
   constructor(commonOptions = {}) {
@@ -24,9 +24,9 @@ class HttpRequest {
       },
       (error) => {
         if (error.code === 'ERR_CANCELED') {
-          console.warn('请求已取消: ', error);
+          // console.warn('请求已取消: ', error);
         } else {
-          console.error('主响应拦截器: ', error);
+          // console.error('主响应拦截器: ', error);
         }
         return Promise.reject(error);
       }
